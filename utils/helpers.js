@@ -125,7 +125,7 @@ export function getMetricMetaInfo (metric) {
       max : 10,
       unit : 'rating',
       step : 1,
-      type : 'steppers',
+      type : 'slider',
       getIcon() {
         return (
           <View>
@@ -140,7 +140,5 @@ export function getMetricMetaInfo (metric) {
     },
   }
 
-  return type metric==='undefined'
-  ? info
-  : info[metric]
+  return typeof metric==='undefined' ? info  : info[metric]
 }

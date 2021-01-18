@@ -1,7 +1,14 @@
 import { StatusBar } from 'expo-status-bar'
 import React,{Component} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import {Ionicons} from '@expo/vector-icons'
+import {View,
+        Text,
+        StyleSheet,
+        TouchableHighlight,
+        TouchableOpacity,
+        TouchableNativeFeedback,
+        TouchableWithoutFeedback} from 'react-native'
+
+import AddEntry from './components/AddEntry'
 
 class App extends Component {
   componentDidMount() {
@@ -11,22 +18,11 @@ class App extends Component {
   }
   render () {
     return (
-      <View style={styles.container}>
-        <Text>Hello World!!</Text>
-        <Ionicons name='ios-pizza' color='red' size={100}/>
-        <StatusBar style="auto" />
+      <View>
+        <AddEntry />
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
 
 export default App
