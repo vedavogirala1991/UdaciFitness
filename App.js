@@ -30,14 +30,11 @@ class App extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 50,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: "stretch",
+  container : {
+    flex : 1,
+    marginTop : 40,
+    padding : 10
   }
 })
-
 
 export default App
