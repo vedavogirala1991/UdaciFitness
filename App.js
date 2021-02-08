@@ -18,11 +18,22 @@ class App extends Component {
   }
   render () {
     return (
-      <View>
+      <View style={styles.container}>
         <AddEntry />
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 50,
+    marginLeft: 10,
+    marginRight: 10,
+    alignItems: "stretch",
+  }
+})
+
 
 export default App
