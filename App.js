@@ -7,8 +7,10 @@ import {View,
         TouchableOpacity,
         TouchableNativeFeedback,
         TouchableWithoutFeedback} from 'react-native'
-
 import AddEntry from './components/AddEntry'
+import reducer from './reducers'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 
 class App extends Component {
   componentDidMount() {
@@ -18,9 +20,11 @@ class App extends Component {
   }
   render () {
     return (
-      <View style={styles.container}>
-        <AddEntry />
-      </View>
+      <Provider store={createStore(reducer)}>
+        <View style={styles.container}>
+          <AddEntry />
+        </View>
+      </Provider>
     )
   }
 }

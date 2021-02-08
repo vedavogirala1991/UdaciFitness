@@ -4,7 +4,7 @@ import {View} from 'react-native'
 import {FontAwesome, MaterialIcons, MaterialCommunityIcons} from '@expo/vector-icons'
 import {white} from './colors'
 
-export function isBetween (num, x, y) {
+export const isBetween = (num, x, y) => {
   if (num >= x && num <= y) {
     return true
   }
@@ -12,7 +12,7 @@ export function isBetween (num, x, y) {
   return false
 }
 
-export function calculateDirection (heading) {
+export const calculateDirection = (heading) => {
   let direction = ''
 
   if (isBetween(heading, 0, 22.5)) {
@@ -40,13 +40,13 @@ export function calculateDirection (heading) {
   return direction
 }
 
-export function timeToString (time = Date.now()) {
+export const timeToString = (time = Date.now()) => {
   const date = new Date(time)
   const todayUTC = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
   return todayUTC.toISOString().split('T')[0]
 }
 
-export function getMetricMetaInfo (metric) {
+export const getMetricMetaInfo = (metric) => {
   const info= {
     run: {
       displayName : 'Run',
@@ -141,4 +141,10 @@ export function getMetricMetaInfo (metric) {
   }
 
   return typeof metric==='undefined' ? info  : info[metric]
+}
+
+export const getDailyReminderValue = () => {
+  return {
+    today : "Don't forget to log your data today!"
+  }
 }
