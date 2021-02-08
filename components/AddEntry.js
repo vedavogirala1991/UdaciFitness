@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {View, TouchableOpacity, Text} from 'react-native'
 import {getMetricMetaInfo, timeToString} from '../utils/helpers'
+import {submitEntry,removeEntry} from '../utils/api'
 import UdaciSlider from './UdaciSlider'
 import UdaciStepper from './UdaciStepper'
 import DateHeader from './DateHeader'
@@ -65,16 +66,10 @@ class AddEntry extends Component {
 
     // Update Redux
 
-    this.setState(()=>({
-      run :0,
-      bike:0,
-      swim:0,
-      sleep:0,
-      eat:0,
-    }))
+
     //Navigate to home
 
-    //Save to DB
+    submitEntry({key,entry})
 
     //Clear local notification
   }
@@ -94,7 +89,7 @@ class AddEntry extends Component {
 
     //Route to home
 
-    //Update DB
+    removeEntry(key)
   }
 
   render () {
