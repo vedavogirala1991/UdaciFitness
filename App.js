@@ -8,6 +8,7 @@ import {View,
         TouchableNativeFeedback,
         TouchableWithoutFeedback} from 'react-native'
 import AddEntry from './components/AddEntry'
+import History from './components/History'
 import reducer from './reducers'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={styles.container}>
-          <AddEntry />
+          <History />
         </View>
       </Provider>
     )
